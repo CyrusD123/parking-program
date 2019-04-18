@@ -45,7 +45,11 @@ function listEmpty() {
 
 /*
 TODO:
-Make mySQL database for array
+Make mySQL database for array using PHP
 Add CSS
 Add Ads?
+
+git add .
+git commit -m "comment"
+git push heroku master
 */
