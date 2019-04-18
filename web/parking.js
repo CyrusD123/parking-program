@@ -45,7 +45,8 @@ function listEmpty() {
 
 /*
 TODO:
-Make mySQL database for array using PHP
+- Create table
+- put into code with php
 Add CSS
 Add Ads?
 
