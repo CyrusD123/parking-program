@@ -1,16 +1,7 @@
 <html>
 <title>Parking Spaces</title>
 <script src = "parking.js"></script>
-<?php
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-
-$conn = new mysqli($server, $username, $password, $db);
-?>
+<?php include 'functions.php';?>
 <body>
     <h1>Empty Spaces:</h1>
     <h2 id="emptyList"></h2>
