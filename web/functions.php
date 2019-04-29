@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 } 
 
 function listEmpty() {
-    $sql = "SELECT Space, Status FROM lots";
+    $sql = "SELECT * FROM lots";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0){
