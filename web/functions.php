@@ -7,14 +7,9 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($server, $username, $password, $db);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 function listEmpty() {
-    $sql = "SELECT * FROM lots";
-    $result = $conn->query($sql);
+    $result = $conn->query("SELECT * FROM lots");
 
     if ($result->num_rows > 0){
         // output data of each row
