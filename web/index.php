@@ -1,5 +1,6 @@
 <html>
 <title>Parking Spaces</title>
+<link rel="shortcut icon" href="favicon.ico">
 <script src = "parking.js"></script>
 <?php include 'functions.php';?>
 <body>
