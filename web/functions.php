@@ -8,7 +8,10 @@ $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($server, $username, $password, $db);
 
-echo $server, $username, $password, $db;
+echo $server
+echo $username;
+echo $password;
+echo $db;
 function listEmpty() {
     $result = $conn->query("SELECT * FROM lots");
 
