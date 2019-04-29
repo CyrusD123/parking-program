@@ -4,6 +4,12 @@
 <script src = "parking.js"></script>
 <?php include 'functions.php';?>
 <body>
+    <?php 
+    echo $server;
+    echo $username;
+    echo $password;
+    echo $db;
+    ?>
     <h1>Empty Spaces:</h1>
     <!--<h2 id="emptyList"></h2>
     <script>
