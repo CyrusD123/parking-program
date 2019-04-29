@@ -8,7 +8,7 @@
     <script>
         listEmpty();
     </script>-->
-    
+    <?php listEmpty(); ?>
     <button type="button" onclick=listEmpty();>Update Empty Spaces</button>
     <form>
         <br>
