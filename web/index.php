@@ -4,10 +4,11 @@
 <?php include 'functions.php';?>
 <body>
     <h1>Empty Spaces:</h1>
-    <h2 id="emptyList"></h2>
+    <!--<h2 id="emptyList"></h2>
     <script>
         listEmpty();
-    </script>
+    </script>-->
+    <?php listEmpty(); ?>
     <button type="button" onclick=listEmpty();>Update Empty Spaces</button>
     <form>
         <br>
