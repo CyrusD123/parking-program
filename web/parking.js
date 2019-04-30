@@ -53,4 +53,6 @@ Add Ads?
 git add .
 git commit -m "comment"
 git push heroku master
+
+heroku logs --tail -a parking-program
 */
