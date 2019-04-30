@@ -14,7 +14,8 @@ if ($conn->connect_error) {
 } 
 
 function listEmpty() {
-    $result = global $conn->query("SELECT * FROM lots");
+    global $conn;
+    $result = $conn->query("SELECT * FROM lots");
 
     if ($result->num_rows > 0){
         // output data of each row
