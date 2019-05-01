@@ -10,7 +10,14 @@
         listEmpty();
     </script>-->
     <?php listEmpty(); ?>
-    <button type="button" onclick=listEmpty();>Update Empty Spaces</button>
+    <form method="post">
+        <input type="submit" name="listEmpty" id="listEmpty" value="Update Empty Spaces" /><br/>
+    </form>
+    <?php
+    if(array_key_exists('listEmpty',$_POST)){
+        listEmpty();
+     }
+    ?>
     <form>
         <br>
         Leave a Space: <br>
