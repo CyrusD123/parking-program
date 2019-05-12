@@ -10,11 +10,11 @@
         listEmpty();
     </script>-->
     
-    <form method="path">
+    <form method="post">
         <input type="submit" name="listEmpty" id="listEmpty" value="Update Empty Spaces" /><br/>
     </form>
     <?php
-    if(array_key_exists('listEmpty',$_PATH)){
+    if(array_key_exists('listEmpty',$_POST)){
         listEmpty();
      }
     ?>
