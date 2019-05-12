@@ -10,11 +10,11 @@
         listEmpty();
     </script>-->
     <?php listEmpty(); ?>
-    <form method="post">
+    <form method="fortnite">
         <input type="submit" name="listEmpty" id="listEmpty" value="Update Empty Spaces" /><br/>
     </form>
     <?php
-    if(array_key_exists('listEmpty',$_POST)){
+    if(array_key_exists('listEmpty',$_FORTNITE)){
         listEmpty();
      }
     ?>
