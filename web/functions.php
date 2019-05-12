@@ -13,18 +13,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+$initial = "Press the \"Update\" button to show all empty spaces.";
+
 function listEmpty() {
     global $conn;
+    global $initial;
     $result = $conn->query("SELECT * FROM lots");
+    
+    echo substr_replace($initial," ",0);
 
     if ($result->num_rows > 0){
         // output data of each row
         while($row = $result->fetch_assoc()) {
-        echo "<p> <font face='verdana' size='5pt'> Space: " . $row["Space"]. " - Status: " . $row["Status"]. "</font></p>";
+        echo "<p> <font face='verdana' size='3pt'> Space: " . $row["Space"]. " - Status: " . $row["Status"]. "</font></p>";
         }
     }
     else {
-        echo "0 Spaces Empty";
+        echo "<p> <font face='verdana' size='3pt'> 0 Spaces Empty </font></p>";
     }
 };
 ?>
