@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$initial = "Press the \"Update\" button to show all empty spaces.";
+echo "<p> <font face='verdana' size='3pt'> Press the \"Update\" button to show all empty spaces. </font></p>";
 
 function listEmpty() {
     global $conn;
