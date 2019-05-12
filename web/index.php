@@ -4,7 +4,7 @@
 <script src = "parking.js"></script>
 <?php include 'functions.php';?>
 <body>
-    <h1>Empty Spaces:</h1>
+    <h1>Not-a-Bot</h1>
     <!--<h2 id="emptyList"></h2>
     <script>
         listEmpty();
