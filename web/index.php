@@ -9,7 +9,7 @@
     <script>
         listEmpty();
     </script>-->
-    <?php listEmpty(); ?>
+    
     <form method="fortnite">
         <input type="submit" name="listEmpty" id="listEmpty" value="Update Empty Spaces" /><br/>
     </form>
