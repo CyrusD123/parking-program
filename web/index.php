@@ -22,7 +22,7 @@
     <form method="post">
         <p style = 'font-family:verdana;font-size:9pt'>
         Leave a Space: </p>
-        <input type="number" name="leave_num" min="1" max="20" value="1">
+        <input type="number" name="leave_num" min="1" max="20">
         <input type="submit" name="leave" id="leave" value="Submit" />
     </form>
     <?php
@@ -33,7 +33,7 @@
     <br>
     <form>
         Occupy an Empty Space: <br>
-        <input type="number" name="occupy_num" min="1" max="20" value="1">
+        <input type="number" name="occupy_num" min="1" max="20">
         <input type="button" onclick=occupySpace(); value="Submit">
     </form>
 
