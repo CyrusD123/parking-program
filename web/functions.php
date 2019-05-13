@@ -22,14 +22,20 @@ function listEmpty() {
     if ($result->num_rows > 0){
         // output data of each row
         while($row = $result->fetch_assoc()) {
-        // echo "<p> <font face='verdana' size='3pt'> Space: " . $row["Space"]. " - Status: " . $row["Status"]. "</font></p>";
+            $emptyCount = 0;
             if ($row["Status"] == 1){
-                echo $row["Space"];
+                echo "<p> <font face='verdana' size='2pt'> $row["Space"] </font></p>";
+            }
+            else {
+                $emptyCount++;
+            }
+            if ($emptyCount == $result->num_rows) {
+                echo "<p> <font face='verdana' size='3pt'> 0 Spaces Empty</font></p>"
             }
         }
     }
     else {
-        echo "<p> <font face='verdana' size='3pt'> 0 Spaces Empty </font></p>";
+        echo "<p> <font face='verdana' size='3pt'> 0 Spaces </font></p>";
     }
 };
 // dont forget to change mysql table back
