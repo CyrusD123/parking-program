@@ -17,14 +17,23 @@
     <?php
     if(array_key_exists('listEmpty',$_POST)){
         listEmpty();
-     }
+    }
     ?>
-    <form>
-        <br>
-        Leave a Space: <br>
+    <form method="post">
+        <p style = 'font-family:verdana;font-size:9pt'>
+        Leave a Space: </p>
         <input type="number" id="leave_num" min="1" max="20" value="1">
-        <input type="button" onclick=emptySpace(); value="Submit">
+        <input type="submit" name="leave" id="leave" value="Submit" />
     </form>
+    <?php
+    <script type='text/javascript'>
+        var num = document.getElementById("leave_num").value;
+        $leaveNum = num;
+    </script>
+    if(array_key_exists('leave',$_POST)){
+        leave();
+    }
+    ?>
     <br>
     <form>
         Occupy an Empty Space: <br>
