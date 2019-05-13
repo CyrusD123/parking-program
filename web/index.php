@@ -28,8 +28,8 @@
     <?php
     <script type='text/javascript'>
         var num = document.getElementById("leave_num").value;
-        $leaveNum = num;
     </script>
+    $leaveNum = num;
     if(array_key_exists('leave',$_POST)){
         leave($leaveNum);
     }
