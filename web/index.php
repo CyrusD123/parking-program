@@ -22,8 +22,8 @@
     <form method="post">
         <p style = 'font-family:verdana;font-size:9pt'>
         Leave a Space: </p>
-        <input type="number" name="leave_num" min="1" max="20">
-        <input type="submit" name="leave" id="leave" value="Submit" />
+        <input type="number" name="leave_num" min="1">
+        <input type="submit" name="leave" id="leave" value="Submit">
     </form>
     <?php
     if(array_key_exists('leave',$_POST)){
@@ -31,11 +31,16 @@
     }
     ?>
     <br>
-    <form>
-        Occupy an Empty Space: <br>
-        <input type="number" name="occupy_num" min="1" max="20">
-        <input type="button" onclick=occupySpace(); value="Submit">
+    <form method="post">
+        <p style = 'font-family:verdana;font-size:9pt'>
+        Occupy an Empty Space: </p>
+        <input type="number" name="occupy_num" min="1">
+        <input type="submit" name="occupy" id="occupy" value="Submit">
     </form>
-
+    <?php
+    if(array_key_exists('occupy',$_POST)){
+        occupy($_POST["occupy_num"]);
+    }
+    ?>
 </body>
 </html>

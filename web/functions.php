@@ -40,8 +40,38 @@ function listEmpty() {
 };
 
 function leave($space_num) {
-    echo $space_num;
-}
+    global $conn;
+    $result = $conn->query("SELECT * FROM lots");
+    $existCount = 0;
+    while($row = $result->fetch_assoc()) {
+        if ($row["Space"] == $space_num && $row["Status"] == 1) {
+            $existCount++;
+        }
+    }
+    if ($existCount == 1) {
+        $conn_leave = conn->query(`$db`.`lots` SET `Status` = '0' WHERE (`Space` = $space_num) and (`Status` = '1'));
+    }
+    else {
+        echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+};
+
+function occupy($space_num) {
+    global $conn;
+    $result = $conn->query("SELECT * FROM lots");
+    $existCount = 0;
+    while($row = $result->fetch_assoc()) {
+        if ($row["Space"] == $space_num && $row["Status"] == 0) {
+            $existCount++;
+        }
+    }
+    if ($existCount == 1) {
+        $conn_leave = conn->query(`$db`.`lots` SET `Status` = '1' WHERE (`Space` = $space_num) and (`Status` = '0'));
+    }
+    else {
+        echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+};
 // dont forget to change mysql table back
 //UPDATE `heroku_61d5206bca0791a`.`lots` SET `Status` = '0' WHERE (`Space` = '13') and (`Status` = '1');
 ?>
