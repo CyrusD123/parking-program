@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 } 
 
 $initial = "Press the \"Update\" button to show all empty spaces.";
-
+echo "$server <br> $username <br> $password <br> $db <br>";
 function listEmpty() {
     global $conn;
     $emptyCount = 0;
@@ -24,18 +24,18 @@ function listEmpty() {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             if ($row["Status"] == 1){
-                echo "<p style = 'font-family:verdana;font-size:16pt'>" . $row["Space"] . "</p>";
+                echo "<p style = 'font-family:verdana;font-size:11pt'>" . $row["Space"] . "</p>";
             }
             else {
                 $emptyCount++;
             }
             if ($emptyCount == $result->num_rows) {
-                echo "<p style = 'font-family:verdana;font-size:16pt'> 0 Spaces Empty </p>";
+                echo "<p style = 'font-family:verdana;font-size:11pt'> 0 Spaces Empty </p>";
             }
         }
     }
     else {
-        echo "<p style = 'font-family:verdana;font-size:16pt'> 0 Spaces </p>";
+        echo "<p style = 'font-family:verdana;font-size:11pt'> 0 Spaces </p>";
     }
 };
 // dont forget to change mysql table back
