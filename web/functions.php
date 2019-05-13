@@ -39,4 +39,5 @@ function listEmpty() {
     }
 };
 // dont forget to change mysql table back
+//UPDATE `heroku_61d5206bca0791a`.`lots` SET `Status` = '0' WHERE (`Space` = '13') and (`Status` = '1');
 ?>
