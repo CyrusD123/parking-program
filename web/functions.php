@@ -39,7 +39,7 @@ function listEmpty() {
     }
 };
 
-function leave($space_num) {
+function leave(&$space_num) {
     echo $space_num;
 }
 // dont forget to change mysql table back

@@ -25,10 +25,10 @@
         <input type="number" id="leave_num" min="1" max="20" value="1">
         <input type="submit" name="leave" id="leave" value="Submit" />
     </form>
-    <?php
     <script type='text/javascript'>
         var num = document.getElementById("leave_num").value;
     </script>
+    <?php
     $leaveNum = num;
     if(array_key_exists('leave',$_POST)){
         leave($leaveNum);
