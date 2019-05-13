@@ -24,7 +24,7 @@ function listEmpty() {
         while($row = $result->fetch_assoc()) {
             $emptyCount = 0;
             if ($row["Status"] == 1){
-                echo "<p> <font face='verdana' size='2pt'> $row["Space"] </font></p>";
+                echo "<p> <font face='verdana' size='2pt'>" . $row["Space"] . "</font></p>";
             }
             else {
                 $emptyCount++;
