@@ -30,7 +30,7 @@ function listEmpty() {
                 $emptyCount++;
             }
             if ($emptyCount == $result->num_rows) {
-                echo "<p> <font face='verdana' size='2pt'> 0 Spaces Empty</font></p>"
+                echo "<p> <font face='verdana' size='2pt'> 0 Spaces Empty</font></p>";
             }
         }
     }
