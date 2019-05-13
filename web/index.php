@@ -5,7 +5,7 @@
 <?php include 'functions.php';?>
 <body>
     <h1>Not-a-Bot</h1>
-    <?php echo "<p> <font face='verdana' size='5pt'> $initial </font></p>"; ?>
+    <?php echo "<p style = 'font-family:verdana;font-size:5pt'> $initial </p>"; ?>
     <!--<h2 id="emptyList"></h2>
     <script>
         listEmpty();
