@@ -22,7 +22,10 @@ function listEmpty() {
     if ($result->num_rows > 0){
         // output data of each row
         while($row = $result->fetch_assoc()) {
-        echo "<p> <font face='verdana' size='3pt'> Space: " . $row["Space"]. " - Status: " . $row["Status"]. "</font></p>";
+        // echo "<p> <font face='verdana' size='3pt'> Space: " . $row["Space"]. " - Status: " . $row["Status"]. "</font></p>";
+            if ($row["Status"] == 1){
+                echo $row["Space"];
+            }
         }
     }
     else {
