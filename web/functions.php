@@ -32,4 +32,5 @@ function listEmpty() {
         echo "<p> <font face='verdana' size='3pt'> 0 Spaces Empty </font></p>";
     }
 };
+// dont forget to change mysql table back
 ?>
