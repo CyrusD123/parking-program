@@ -19,12 +19,17 @@
         listEmpty();
     }
     ?>
-    <form action="leave.php" method="post">
+    <form method="post">
         <p style = 'font-family:verdana;font-size:9pt'>
         Leave a Space: </p>
         <input type="number" id="leave_num" min="1" max="20" value="1">
         <input type="submit" name="leave" id="leave" value="Submit" />
     </form>
+    <?php
+    if(array_key_exists('leave',$_POST)){
+        leave($_POST["leave_num"]);
+    }
+    ?>
     <br>
     <form>
         Occupy an Empty Space: <br>
