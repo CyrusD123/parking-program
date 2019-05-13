@@ -30,12 +30,12 @@ function listEmpty() {
                 $emptyCount++;
             }
             if ($emptyCount == $result->num_rows) {
-                echo "<p> <font face='verdana' size='3pt'> 0 Spaces Empty</font></p>"
+                echo "<p> <font face='verdana' size='2pt'> 0 Spaces Empty</font></p>"
             }
         }
     }
     else {
-        echo "<p> <font face='verdana' size='3pt'> 0 Spaces </font></p>";
+        echo "<p> <font face='verdana' size='2pt'> 0 Spaces </font></p>";
     }
 };
 // dont forget to change mysql table back
