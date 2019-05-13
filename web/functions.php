@@ -49,7 +49,7 @@ function leave($space_num) {
         }
     }
     if ($existCount == 1) {
-        $conn_leave = $conn->query(`$db`.`lots` SET `Status` = '0' WHERE (`Space` = $space_num) and (`Status` = '1'));
+        $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
     }
     else {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
@@ -66,7 +66,7 @@ function occupy($space_num) {
         }
     }
     if ($existCount == 1) {
-        $conn_leave = $conn->query(`$db`.`lots` SET `Status` = '1' WHERE (`Space` = $space_num) and (`Status` = '0'));
+        $conn_leave = $conn->query("UPDATE lots SET Status = 1 WHERE (Space = $space_num) and (Status = 0)");
     }
     else {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
