@@ -17,12 +17,12 @@ $initial = "Press the \"Update\" button to show all empty spaces.";
 
 function listEmpty() {
     global $conn;
+    $emptyCount = 0;
     $result = $conn->query("SELECT * FROM lots");
 
     if ($result->num_rows > 0){
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            $emptyCount = 0;
             if ($row["Status"] == 1){
                 echo "<p> <font face='verdana' size='2pt'>" . $row["Space"] . "</font></p>";
             }
