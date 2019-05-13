@@ -72,6 +72,15 @@ function occupy($space_num) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
     }
 };
-// dont forget to change mysql table back
-//UPDATE `heroku_61d5206bca0791a`.`lots` SET `Status` = '0' WHERE (`Space` = '13') and (`Status` = '1');
+/*
+TODO:
+Make it look cool
+Add Ads?
+
+git add .
+git commit -m "comment"
+git push heroku master
+
+heroku logs --tail -a parking-program
+*/
 ?>
