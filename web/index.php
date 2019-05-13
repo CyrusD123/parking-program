@@ -31,7 +31,7 @@
         $leaveNum = num;
     </script>
     if(array_key_exists('leave',$_POST)){
-        leave();
+        leave($leaveNum);
     }
     ?>
     <br>
