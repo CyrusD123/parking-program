@@ -7,6 +7,12 @@
         color: white;
         text-align: center;
     }
+    input[type=number] {
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        border-color: #5CBFFF;
+    }
 </style>
 <body style="background-color:#444444">
     <img src="logo.png" alt="Not-a-Bot" class="center">
