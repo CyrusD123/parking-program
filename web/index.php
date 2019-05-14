@@ -11,7 +11,7 @@
         padding: 12px 20px;
         box-sizing: border-box;
         border-radius: 6px;
-        border-color: #5CBFFF;
+        border-color: black;
     }
     input[type=submit] {
         border-radius: 6px;
@@ -19,6 +19,7 @@
         color: white;
         font: 14px verdana;
         background: #5CBFFF;
+        border-color: #5CBFFF;
     }
 </style>
 <body style="background-color:#444444">
