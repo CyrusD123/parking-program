@@ -20,7 +20,7 @@
     ?>
     <form method="post">
         <p style = 'font-family:verdana;font-size:9pt'>
-        Leave a Space: </p>
+        Leave an Occupied Space: </p>
         <input type="number" name="leave_num" min="1">
         <input type="submit" name="leave" id="leave" value="Submit">
     </form>
