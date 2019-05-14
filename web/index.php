@@ -13,6 +13,12 @@
         border-radius: 6px;
         border-color: black;
     }
+    input[type=text] {
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        border-color: black;
+    }
     input[type=submit] {
         -webkit-appearance: none;
         border-radius: 6px;
@@ -42,24 +48,28 @@
     <form method="post">
         <p style = 'font-family:verdana;font-size:11pt'>
         Leave an Occupied Space: </p>
-        <input type="number" name="leave_num" min="1">
+        <input type="number" name="leave_num" min="1" placeholder="Space Number"> <br>
+        <input type="text" name="leave_name" placeholder="Your Name"> <br>
+        <input type="text" name="leave_car" placeholder="A Description of Your Car">
         <input type="submit" name="leave" id="leave" value="Submit">
     </form>
     <?php
     if(array_key_exists('leave',$_POST)){
-        leave($_POST["leave_num"]);
+        leave($_POST["leave_num"], $_POST["leave_name"], $_POST["leave_car"]);
     }
     ?>
     <br>
     <form method="post">
         <p style = 'font-family:verdana;font-size:11pt'>
         Occupy an Empty Space: </p>
-        <input type="number" name="occupy_num" min="1">
+        <input type="number" name="occupy_num" min="1"> <br>
+        <input type="text" name="occupy_name" placeholder="Your Name"> <br>
+        <input type="text" name="occupy_car" placeholder="A Description of Your Car">
         <input type="submit" name="occupy" id="occupy" value="Submit">
     </form>
     <?php
     if(array_key_exists('occupy',$_POST)){
-        occupy($_POST["occupy_num"]);
+        occupy($_POST["occupy_num"], $_POST["occupy_name"], $_POST["occupy_car"]);
     }
     ?>
 </body>
