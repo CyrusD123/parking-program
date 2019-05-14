@@ -1,6 +1,6 @@
 <html>
 <title>Not-a-Bot Parking</title>
-<link rel="shortcut icon" href="logo.ico">
+<link rel="shortcut icon" href="icon.ico">
 <?php include 'functions.php';?>
 <style>
     body {
@@ -14,6 +14,7 @@
         border-color: black;
     }
     input[type=submit] {
+        -webkit-appearance: none;
         border-radius: 6px;
         padding: 12px 20px;
         color: white;
