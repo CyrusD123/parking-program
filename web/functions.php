@@ -75,7 +75,7 @@ function occupy($space_num) {
     }
 };
 
-if (date('H-i-s') = '16-45-00') {
+if (date('H-i-s') = '16-47-00') {
     global $conn;
     $conn_reset = $conn->query("UPDATE lots SET Status = 0 WHERE (Status = 1)");
 }
