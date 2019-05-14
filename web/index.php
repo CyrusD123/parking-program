@@ -1,9 +1,9 @@
 <html>
 <title>Parking Spaces</title>
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="logo.ico">
 <?php include 'functions.php';?>
-<body>
-    <h1>Not-a-Bot</h1>
+<body style="background-color:#444444">
+    <img src="logo.png" alt="Not-a-Bot" class="center">
     <?php echo "<p style = 'font-family:verdana;font-size:16pt'> $initial </p>"; ?>
     <!--<h2 id="emptyList"></h2>
     <script>

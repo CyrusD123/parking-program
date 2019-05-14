@@ -73,7 +73,7 @@ function occupy($space_num) {
     }
 };
 /*
-0 - Occupied
+0 - Occupied (Default)
 1 - Empty
 
 TODO:
