@@ -17,6 +17,8 @@ $initial = "Press the \"Update\" button to show all empty spaces.";
 
 date_default_timezone_set('America/New_York');
 echo date('H-i-s');
+echo strtotime('midnight');
+
 
 function listEmpty() {
     global $conn;
@@ -75,6 +77,8 @@ function occupy($space_num) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
     }
 };
+
+
 /*
 0 - Occupied (Default)
 1 - Empty
