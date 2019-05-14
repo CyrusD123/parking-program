@@ -62,7 +62,7 @@
     <form method="post">
         <p style = 'font-family:verdana;font-size:11pt'>
         Occupy an Empty Space: </p>
-        <input type="number" name="occupy_num" min="1"> <br>
+        <input type="number" name="occupy_num" min="1" placeholder="Space Number"> <br>
         <input type="text" name="occupy_name" placeholder="Your Name"> <br>
         <input type="text" name="occupy_car" placeholder="A Description of Your Car">
         <input type="submit" name="occupy" id="occupy" value="Submit">
