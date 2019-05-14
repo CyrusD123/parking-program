@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $initial = "Press the \"Update\" button to show all empty spaces.";
 
 date_default_timezone_set('America/New_York');
-echo time('H-i-s');
+echo date('H-i-s');
 
 function listEmpty() {
     global $conn;
