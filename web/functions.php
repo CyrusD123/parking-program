@@ -44,23 +44,6 @@ function leave($space_num) {
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
     while($row = $result->fetch_assoc()) {
-        if ($row["Space"] == $space_num && $row["Status"] == 1) {
-            $existCount++;
-        }
-    }
-    if ($existCount == 1) {
-        $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
-    }
-    else {
-        echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
-    }
-};
-
-function occupy($space_num) {
-    global $conn;
-    $result = $conn->query("SELECT * FROM lots");
-    $existCount = 0;
-    while($row = $result->fetch_assoc()) {
         if ($row["Space"] == $space_num && $row["Status"] == 0) {
             $existCount++;
         }
@@ -72,7 +55,27 @@ function occupy($space_num) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
     }
 };
+
+function occupy($space_num) {
+    global $conn;
+    $result = $conn->query("SELECT * FROM lots");
+    $existCount = 0;
+    while($row = $result->fetch_assoc()) {
+        if ($row["Space"] == $space_num && $row["Status"] == 1) {
+            $existCount++;
+        }
+    }
+    if ($existCount == 1) {
+        $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
+    }
+    else {
+        echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+};
 /*
+0 - Occupied
+1 - Empty
+
 TODO:
 Make it look cool
 Add Ads?
