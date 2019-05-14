@@ -77,8 +77,9 @@ function occupy($space_num) {
 1 - Empty
 
 TODO:
-Make it look cool
+Reset at midnight
 Add Ads?
+Accounts
 
 git add .
 git commit -m "comment"
