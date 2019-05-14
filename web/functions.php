@@ -75,7 +75,7 @@ function occupy($space_num) {
     }
 };
 
-if (date('H-i-s') == '16-28-15') {
+if (date('H-i-s') > '16-28-15') {
     echo "hi";
 }
 /*
