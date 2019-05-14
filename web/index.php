@@ -13,10 +13,11 @@
         border-radius: 6px;
         border-color: #5CBFFF;
     }
-    .form-submit-button {
+    input[type=submit] {
+        border-radius: 6px;
         padding: 12px 20px;
         color: white;
-        font: 14pt verdana;
+        font: 14px verdana;
         background: #5CBFFF;
     }
 </style>
