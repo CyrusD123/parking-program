@@ -16,9 +16,6 @@ if ($conn->connect_error) {
 $initial = "Press the \"Update\" button to show all empty spaces.";
 
 date_default_timezone_set('America/New_York');
-echo date('H-i-s');
-echo strtotime('midnight');
-
 
 function listEmpty() {
     global $conn;
@@ -78,7 +75,9 @@ function occupy($space_num) {
     }
 };
 
-
+if (date('H-i-s') == '16-28-15') {
+    echo "hi";
+}
 /*
 0 - Occupied (Default)
 1 - Empty
