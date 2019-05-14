@@ -13,6 +13,12 @@
         border-radius: 6px;
         border-color: #5CBFFF;
     }
+    .form-submit-button {
+        padding: 12px 20px;
+        color: white;
+        font: 14pt verdana;
+        background: #5CBFFF;
+    }
 </style>
 <body style="background-color:#444444">
     <img src="logo.png" alt="Not-a-Bot" class="center">
