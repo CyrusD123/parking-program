@@ -2,6 +2,12 @@
 <title>Not-a-Bot Parking</title>
 <link rel="shortcut icon" href="logo.ico">
 <?php include 'functions.php';?>
+<style>
+    body {
+        color: white;
+        text-align: center;
+    }
+</style>
 <body style="background-color:#444444">
     <img src="logo.png" alt="Not-a-Bot" class="center">
     <?php echo "<p style = 'font-family:verdana;font-size:16pt'> $initial </p>"; ?>
