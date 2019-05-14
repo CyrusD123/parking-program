@@ -1,5 +1,5 @@
 <html>
-<title>Parking Spaces</title>
+<title>Not-a-Bot Parking</title>
 <link rel="shortcut icon" href="logo.ico">
 <?php include 'functions.php';?>
 <body style="background-color:#444444">
