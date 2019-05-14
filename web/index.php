@@ -25,7 +25,7 @@
     }
     ?>
     <form method="post">
-        <p style = 'font-family:verdana;font-size:9pt'>
+        <p style = 'font-family:verdana;font-size:11pt'>
         Leave an Occupied Space: </p>
         <input type="number" name="leave_num" min="1">
         <input type="submit" name="leave" id="leave" value="Submit">
@@ -37,7 +37,7 @@
     ?>
     <br>
     <form method="post">
-        <p style = 'font-family:verdana;font-size:9pt'>
+        <p style = 'font-family:verdana;font-size:11pt'>
         Occupy an Empty Space: </p>
         <input type="number" name="occupy_num" min="1">
         <input type="submit" name="occupy" id="occupy" value="Submit">
