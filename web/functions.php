@@ -76,7 +76,7 @@ function occupy($space_num) {
     }
 };
 
-if ($time == '16-45-30') {
+if ($time == '00-00-00') {
     global $conn;
     $conn_reset = $conn->query("UPDATE lots SET Status = 0 WHERE (Status = 1)");
 }
@@ -85,7 +85,6 @@ if ($time == '16-45-30') {
 1 - Empty
 
 TODO:
-Reset at midnight
 Add Ads?
 Accounts
 
