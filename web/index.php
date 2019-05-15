@@ -1,5 +1,5 @@
 <html>
-<title>Not-a-Bot Parking</title>
+<title>Home - Not-a-Bot Parking</title>
 <link rel="shortcut icon" href="icon.ico">
 <?php include 'functions.php';?>
 <style>
@@ -37,6 +37,10 @@
         listEmpty();
     </script>-->
     
+    <form action="account.php">
+        <input type="submit" value="Create an Account" text-align="right" />
+    </form>
+
     <form method="post">
         <input type="submit" name="listEmpty" id="listEmpty" value="Update Empty Spaces" /><br/>
     </form>
@@ -49,7 +53,7 @@
         <p style = 'font-family:verdana;font-size:11pt'>
         Leave an Occupied Space: </p>
         <input type="number" name="leave_num" min="1" placeholder="Space Number"> <br>
-        <input type="text" name="leave_username" placeholder="Username">
+        <input type="text" name="leave_username" placeholder="Username"> <br>
         <input type="text" name="leave_password" placeholder="Password">
         <input type="submit" name="leave" id="leave" value="Submit">
     </form>
