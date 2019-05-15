@@ -49,12 +49,13 @@
         <p style = 'font-family:verdana;font-size:11pt'>
         Leave an Occupied Space: </p>
         <input type="number" name="leave_num" min="1" placeholder="Space Number"> <br>
-        <input type="text" name="leave_name" placeholder="Your Name">
+        <input type="text" name="leave_username" placeholder="Username">
+        <input type="text" name="leave_password" placeholder="Password">
         <input type="submit" name="leave" id="leave" value="Submit">
     </form>
     <?php
     if(array_key_exists('leave',$_POST)){
-        leave($_POST["leave_num"], $_POST["leave_name"]);
+        leave($_POST["leave_num"], $_POST["leave_username"], $_POST["leave_password"]);
     }
     ?>
     <br>
@@ -62,13 +63,13 @@
         <p style = 'font-family:verdana;font-size:11pt'>
         Occupy an Empty Space: </p>
         <input type="number" name="occupy_num" min="1" placeholder="Space Number"> <br>
-        <input type="text" name="occupy_name" placeholder="Your Name"> <br>
-        <input type="text" name="occupy_car" placeholder="Make and Model of Your Car">
+        <input type="text" name="occupy_username" placeholder="Username"> <br>
+        <input type="text" name="occupy_password" placeholder="Password">
         <input type="submit" name="occupy" id="occupy" value="Submit">
     </form>
     <?php
     if(array_key_exists('occupy',$_POST)){
-        occupy($_POST["occupy_num"], $_POST["occupy_name"], $_POST["occupy_car"]);
+        occupy($_POST["occupy_num"], $_POST["occupy_username"], $_POST["occupy_password"]);
     }
     ?>
 </body>

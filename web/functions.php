@@ -42,7 +42,7 @@ function listEmpty() {
     }
 };
 
-function leave($space_num, $name) {
+function leave($space_num, $username, $password) {
     global $conn;
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
@@ -59,7 +59,7 @@ function leave($space_num, $name) {
     }
 };
 
-function occupy($space_num, $name, $car) {
+function occupy($space_num, $username, $password) {
     global $conn;
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
