@@ -32,12 +32,8 @@
 <body style="background-color:#444444">
     <img src="logo.png" alt="Not-a-Bot" class="center">
     <?php echo "<p style = 'font-family:verdana;font-size:16pt'> $initial </p>"; ?>
-    <!--<h2 id="emptyList"></h2>
-    <script>
-        listEmpty();
-    </script>-->
     
-    <form action="account.php">
+    <form action="account.php" style="position:absolute;top:10;right:10;">
         <input type="submit" value="Create an Account" style="float: right;" />
     </form>
 
