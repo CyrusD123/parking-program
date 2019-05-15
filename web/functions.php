@@ -87,6 +87,7 @@ if ($time == '00-00-00') {
 TODO:
 Add Ads?
 Accounts
+Make image clickable to take to home
 
 git add .
 git commit -m "comment"
