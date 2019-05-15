@@ -42,7 +42,7 @@ function listEmpty() {
     }
 };
 
-function leave($space_num, $name, $car) {
+function leave($space_num, $name) {
     global $conn;
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
