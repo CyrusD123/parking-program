@@ -15,9 +15,6 @@ if ($conn->connect_error) {
 
 $initial = "Press the \"Update\" button to show all empty spaces.";
 
-date_default_timezone_set('America/New_York');
-$time = date('H-i-s');
-
 function listEmpty() {
     global $conn;
     $emptyCount = 0;
@@ -84,6 +81,8 @@ function occupy($space_num, $username, $password) {
 TODO:
 Add Ads?
 Accounts
+    - Username and ID don't match any others
+    - Username and password match table
 Make image clickable to take to home
 
 git add .
