@@ -38,7 +38,7 @@
     </script>-->
     
     <form action="account.php">
-        <input type="submit" value="Create an Account" text-align="right" />
+        <input type="submit" value="Create an Account" align="right" />
     </form>
 
     <form method="post">
