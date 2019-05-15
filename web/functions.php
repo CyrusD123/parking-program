@@ -15,6 +15,9 @@ if ($conn->connect_error) {
 
 $initial = "Press the \"Update\" button to show all empty spaces.";
 
+date_default_timezone_set('America/New_York');
+$time = date('H-i-s');
+
 function listEmpty() {
     global $conn;
     $emptyCount = 0;
@@ -73,6 +76,10 @@ function occupy($space_num, $username, $password) {
     }
 };
 
+if ($time == '00-00-00') {
+    global $conn;
+    $conn_reset = $conn->query("UPDATE lots SET Status = 0 WHERE (Status = 1)");
+}
 /*
 0 - Occupied (Default)
 1 - Empty
