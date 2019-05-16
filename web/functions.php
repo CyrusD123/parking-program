@@ -89,7 +89,6 @@ function account($name, $id, $car, $username, $password) {
     }
     if ($validInt == 0) {
         $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ($name, $id, $car, $username, $password)");
-        echo "Hi";
         header("Location:index.php");
     }
 }
