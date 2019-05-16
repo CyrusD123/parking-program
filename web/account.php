@@ -40,12 +40,12 @@
         <input type="text" name="account_car" placeholder="Make and Model of Your Car"> <br>
         <input type="text" name="account_username" placeholder="Username"> <br>
         <input type="text" name="account_password" placeholder="Password"> <br>
-        <input type="submit" name="leave" id="leave" value="Create">
+        <input type="submit" name="create" id="create" value="Create">
     </form>
 
     <?php
-    if(array_key_exists('leave',$_POST)){
-        
+    if(array_key_exists('create',$_POST)){
+        account($_POST["account_name"], $_POST["account_id"], $_POST["account_car"], $_POST["account_username"], $_POST["account_password"],);
     }
     ?>
 </body>
