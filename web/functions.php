@@ -78,7 +78,7 @@ function account($name, $id, $car, $username, $password) {
     $validConn = $conn->query("SELECT * FROM users");
     $validInt = 0;
     while($row = $validConn->fetch_assoc()) {
-        if ($row["id"] == $name) {
+        if ($row["id"] == $id) {
             echo "<script type='text/javascript'> alert('ID number has already been used. Please try again.'); </script>";
             $validInt++;
         }
