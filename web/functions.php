@@ -87,7 +87,8 @@ function account($name, $id, $car, $username, $password) {
             $validInt++;
         }
         if ($validInt == 0) {
-            $accountConn = $conn->query("INSERT INTO users (name, id, car, username, pass) VALUES ($name, $id, $car, $username, $password)");
+            $accountConn = $conn->query("INSERT INTO users (name, id, car, username, pass)
+            VALUES ($name, $id, $car, $username, $password)");
         }
     }
 }
