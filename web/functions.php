@@ -82,12 +82,9 @@ function account($name, $id, $car, $username, $password) {
             echo "<script type='text/javascript'> alert('ID number has already been used. Please try again.'); </script>";
             $validInt++;
         }
-        elseif ($row["username"] == $username) {
+        if ($row["username"] == $username) {
             echo "<script type='text/javascript'> alert('Username has already been used. Please try again'); </script>";
             $validInt++;
-        }
-        else {
-            continue;
         }
 
         if ($validInt == 0) {
