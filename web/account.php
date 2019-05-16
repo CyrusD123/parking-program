@@ -45,7 +45,7 @@
 
     <?php
     if(array_key_exists('create',$_POST)){
-        account($_POST["account_name"], $_POST["account_id"], $_POST["account_car"], $_POST["account_username"], $_POST["account_password"],);
+        account($_POST["account_name"], $_POST["account_id"], $_POST["account_car"], $_POST["account_username"], $_POST["account_password"]);
     }
     ?>
 </body>
