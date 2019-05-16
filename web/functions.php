@@ -89,7 +89,7 @@ function account($name, $id, $car, $username, $password) {
     }
     if ($validInt == 0) {
         $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ('$name', '$id', '$car', '$username', '$password')");
-        // header("Location:index.php");
+        header("Location:index.php");
     }
 }
 /*
@@ -99,9 +99,9 @@ function account($name, $id, $car, $username, $password) {
 TODO:
 Add Ads?
 Accounts
-    - Username and ID don't match any others
     - Username and password match table
     - All must be filled in
+    - Printout all spaces exchanged
 Make image clickable to take to home
 
 git add .
