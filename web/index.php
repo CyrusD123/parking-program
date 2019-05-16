@@ -48,9 +48,9 @@
     <form method="post">
         <p style = 'font-family:verdana;font-size:11pt'>
         Leave an Occupied Space: </p>
-        <input type="text" name="leave_username" placeholder="Username"> <br>
-        <input type="text" name="leave_password" placeholder="Password"> <br>
-        <input type="number" name="leave_num" min="1" placeholder="Space Number">
+        <input type="text" name="leave_username" placeholder="Username" required> <br>
+        <input type="text" name="leave_password" placeholder="Password" required> <br>
+        <input type="number" name="leave_num" min="1" placeholder="Space Number" required>
         <input type="submit" name="leave" id="leave" value="Submit">
     </form>
     <?php
@@ -62,9 +62,9 @@
     <form method="post">
         <p style = 'font-family:verdana;font-size:11pt'>
         Occupy an Empty Space: </p>
-        <input type="text" name="occupy_username" placeholder="Username"> <br>
-        <input type="text" name="occupy_password" placeholder="Password"> <br>
-        <input type="number" name="occupy_num" min="1" placeholder="Space Number">
+        <input type="text" name="occupy_username" placeholder="Username" required> <br>
+        <input type="text" name="occupy_password" placeholder="Password" required> <br>
+        <input type="number" name="occupy_num" min="1" placeholder="Space Number" required>
         <input type="submit" name="occupy" id="occupy" value="Submit">
     </form>
     <?php
