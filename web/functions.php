@@ -86,6 +86,7 @@ function account($name, $id, $car, $username, $password) {
             echo "<script type='text/javascript'> alert('Username has already been used. Please try again'); </script>";
             $validInt++;
         }
+        
         if ($validInt == 0) {
             $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ($name, $id, $car, $username, $password)");
             header("Location:index.php");
