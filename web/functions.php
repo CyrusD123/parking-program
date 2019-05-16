@@ -73,7 +73,21 @@ function occupy($space_num, $username, $password) {
     }
 };
 
-
+function account($name, $id, $car, $username, $password) {
+    global $conn;
+    $validConn = $conn->query("SELECT * FROM users");
+    while($row = $validConn->fetch_assoc()) {
+        if ($row["id"] == $name) {
+            echo "<script type='text/javascript'> alert('ID number has already been used. Please try again.'); </script>";
+        }
+        elseif ($row["username"] == $username) {
+            echo "<script type='text/javascript'> alert('Username has already been used. Please try again'); </script>";
+        }
+        else {
+            $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ($name, $id, $car, $username, $password)");
+        }
+    }
+}
 /*
 0 - Occupied (Default)
 1 - Empty
