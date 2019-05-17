@@ -56,7 +56,7 @@ function leave($space_num, $username, $password) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
     }
     if ($doneCount == 1) {
-        echo "<script type='text/javascript'> alert('You've Already Left a Space!); </script>";
+        echo "<script type='text/javascript'> alert('You've Already Left a Space!'); </script>";
     }
 
     $userResult = $conn->query("SELECT * FROM users");
@@ -92,7 +92,7 @@ function occupy($space_num, $username, $password) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
     }
     if ($doneCount == 1) {
-        echo "<script type='text/javascript'> alert('You've Already Occupied a Space!); </script>";
+        echo "<script type='text/javascript'> alert('You've Already Occupied a Space!'); </script>";
     }
 
     $userResult = $conn->query("SELECT * FROM users");
