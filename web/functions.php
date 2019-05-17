@@ -47,6 +47,9 @@ function leave($space_num, $username, $password) {
         if ($row["Space"] == $space_num && $row["Status"] == 0 && $row["New_Username"] == NULL) {
             $existCount++;
         }
+        if ($row["Usual_Username"] == $username) {
+            echo "<script type='text/javascript'> alert('You've Already Left a Space!); </script>";
+        }
     }
     if ($existCount == 0) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
@@ -76,6 +79,9 @@ function occupy($space_num, $username, $password) {
     while($row = $result->fetch_assoc()) {
         if ($row["Space"] == $space_num && $row["Status"] == 1 && $row["New_Username"] == NULL) {
             $existCount++;
+        }
+        if ($row["New_Username"] == $username) {
+            echo "<script type='text/javascript'> alert('You've Already Occupied a Space!); </script>";
         }
     }
     if ($existCount == 0) {
