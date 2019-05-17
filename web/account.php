@@ -28,6 +28,15 @@
         background: #5CBFFF;
         border-color: #5CBFFF;
     }
+    input[type=password] {
+        -webkit-appearance: none;
+        border-radius: 6px;
+        padding: 12px 20px;
+        color: white;
+        font: 14px verdana;
+        background: #5CBFFF;
+        border-color: #5CBFFF;
+    }
 </style>
 <body style="background-color:#444444">
     <img src="logo.png" alt="Not-a-Bot" class="center">
