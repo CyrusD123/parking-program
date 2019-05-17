@@ -137,7 +137,15 @@ function printout() {
     global $conn;
     $lotsConn = $conn->query("SELECT * FROM lots");
 
-    echo "<p style = 'font-family:verdana;font-size:12pt'> Any changes to the parking spaces can be seen here! </p><br>";
+    $emptyInt = 0;
+    while ($rowEmpty = $lotsConn->fetch_assoc()) {
+        if ($rowEmpty["Usual_Username"] == NULL) {
+            $emptyInt++;
+        }
+    }
+    if ($emptyInt == $lotsConn->num_rows) {
+        "<p style = 'font-family:verdana;font-size:14pt'> No parking spaces have been changed. </p>
+    }
 
     while ($rowLots = $lotsConn->fetch_assoc()) {
         $nameOld = $rowLots['Usual_Username'];
