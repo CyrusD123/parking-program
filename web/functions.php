@@ -124,15 +124,16 @@ function printout() {
     $lotsConn = $conn->query("SELECT * FROM lots");
 
     while ($rowLots = $lotsConn->fetch_assoc()) {
+        $name = $rowLots['Usual_Username'];
         if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] == NULL) {
-            $usersConn = $conn->query("SELECT * FROM users WHERE (Usual_Username = $rowLots['Usual_Username'])");
+            $usersConn = $conn->query("SELECT * FROM users WHERE (Usual_Username = '$name')");
 
             while ($rowUsers = $usersConn->fetch->assoc()) {
                 echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . ")</p>";
             }
         }
         if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] != NULL) {
-            $usersConn = $conn->query("SELECT * FROM users WHERE (Usual_Username = $rowLots['Usual_Username'])");
+            $usersConn = $conn->query("SELECT * FROM users WHERE (Usual_Username = '$name')");
 
             while ($rowUsers = $usersConn->fetch->assoc()) {
                 echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . "), occupied by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . ")</p>";
