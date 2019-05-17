@@ -43,17 +43,20 @@ function leave($space_num, $username, $password) {
     global $conn;
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
+    $doneCount = 0;
     while($row = $result->fetch_assoc()) {
         if ($row["Space"] == $space_num && $row["Status"] == 0 && $row["New_Username"] == NULL) {
             $existCount++;
         }
         if ($row["Usual_Username"] == $username) {
-            echo "<script type='text/javascript'> alert('You've Already Left a Space!); </script>";
-            $existCount--;
+            $doneCount++;
         }
     }
-    if ($existCount <= 0) {
+    if ($existCount == 0) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+    if ($doneCount == 1) {
+        echo "<script type='text/javascript'> alert('You've Already Left a Space!); </script>";
     }
 
     $userResult = $conn->query("SELECT * FROM users");
@@ -67,7 +70,7 @@ function leave($space_num, $username, $password) {
         echo "<script type='text/javascript'> alert('Error! Invalid Username or Password'); </script>";
     }
 
-    if ($existCount == 1 && $existTwo == 1) {
+    if ($existCount == 1 && $existTwo == 1 && $doneCount == 0) {
         $conn_leave = $conn->query("UPDATE lots SET Status = 1 WHERE (Space = $space_num) and (Status = 0)");
         $conn_leave2 = $conn->query("UPDATE lots SET Usual_Username = '$username' WHERE (Space = $space_num)");
     }
@@ -82,12 +85,14 @@ function occupy($space_num, $username, $password) {
             $existCount++;
         }
         if ($row["New_Username"] == $username) {
-            echo "<script type='text/javascript'> alert('You've Already Occupied a Space!); </script>";
-            $existCount--;
+            $doneCount++;
         }
     }
-    if ($existCount <= 0) {
+    if ($existCount == 0) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+    if ($doneCount == 1) {
+        echo "<script type='text/javascript'> alert('You've Already Occupied a Space!); </script>";
     }
 
     $userResult = $conn->query("SELECT * FROM users");
@@ -101,7 +106,7 @@ function occupy($space_num, $username, $password) {
         echo "<script type='text/javascript'> alert('Error! Invalid Username or Password'); </script>";
     }
 
-    if ($existCount == 1 && $existTwo == 1) {
+    if ($existCount == 1 && $existTwo == 1 && $doneCount = 0;) {
         $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
         $conn_leave2 = $conn->query("UPDATE lots SET New_Username = '$username' WHERE (Space = $space_num)");
     }
