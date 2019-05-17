@@ -148,8 +148,8 @@ function printout() {
     }
 
     while ($rowLots = $lotsConn->fetch_assoc()) {
-        $nameOld = $rowLots['Usual_Username'];
-        $nameNew = $rowLots['New_Username'];
+        $nameOld = $rowLots["Usual_Username"];
+        $nameNew = $rowLots["New_Username"];
         if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] == NULL) {
             $usersConn = $conn->query("SELECT name, id, car FROM users WHERE (username = '$nameOld')");
 
