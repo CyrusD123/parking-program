@@ -137,7 +137,7 @@ function printout() {
     global $conn;
     $lotsConn = $conn->query("SELECT * FROM lots");
 
-    echo "<p style = 'font-family:verdana;font-size:11pt'> Any changes to the parking spaces can be seen here! </p><br>"
+    echo "<p style = 'font-family:verdana;font-size:12pt'> Any changes to the parking spaces can be seen here! </p><br>";
 
     while ($rowLots = $lotsConn->fetch_assoc()) {
         $nameOld = $rowLots['Usual_Username'];
