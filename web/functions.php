@@ -144,7 +144,7 @@ function printout() {
         }
     }
     if ($emptyInt == $lotsConn->num_rows) {
-        "<p style = 'font-family:verdana;font-size:14pt'> No parking spaces have been changed. </p>
+        "<p style = 'font-family:verdana;font-size:14pt'> No parking spaces have been changed. </p>";
     }
 
     while ($rowLots = $lotsConn->fetch_assoc()) {
