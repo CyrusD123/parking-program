@@ -80,6 +80,7 @@ function occupy($space_num, $username, $password) {
     global $conn;
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
+    $doneCount = 0;
     while($row = $result->fetch_assoc()) {
         if ($row["Space"] == $space_num && $row["Status"] == 1 && $row["New_Username"] == NULL) {
             $existCount++;
