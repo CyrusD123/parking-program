@@ -39,7 +39,7 @@
         <input type="number" name="account_id" min="1" placeholder="Your School ID" required> <br>
         <input type="text" name="account_car" placeholder="Make and Model of Car" required> <br>
         <input type="text" name="account_username" placeholder="Username" required> <br>
-        <input type="text" name="account_password" placeholder="Password" required> <br>
+        <input type="password" name="account_password" placeholder="Password" required> <br>
         <input type="submit" name="create" id="create" value="Create">
     </form>
 
