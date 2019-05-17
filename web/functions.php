@@ -165,10 +165,6 @@ function printout() {
 
 TODO:
 Add Ads?
-Accounts
-    - Printout all spaces exchanged
-    - Only leave and occupy once
-    - Password masking with the dot thingies
 Make image clickable to take to home
 
 git add .
