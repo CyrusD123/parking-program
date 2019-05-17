@@ -1,5 +1,5 @@
 <html>
-<title>Create an Account - Not-a-Bot Parking</title>
+<title>Printout - Not-a-Bot Parking</title>
 <link rel="shortcut icon" href="icon.ico">
 <?php include 'functions.php';?>
 <style>
@@ -31,6 +31,8 @@
 </style>
 <body style="background-color:#444444">
     <img src="logo.png" alt="Not-a-Bot" class="center">
+
+    <?php printout(); ?>
 
 </body>
 </html>

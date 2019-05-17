@@ -117,7 +117,29 @@ function account($name, $id, $car, $username, $password) {
         $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ('$name', '$id', '$car', '$username', '$password')");
         header("Location:index.php");
     }
-}
+};
+
+function printout() {
+    global $conn;
+    $lotsConn = $conn->query("SELECT * FROM lots");
+
+    while ($rowLots = $lotsConn->fetch_assoc()) {
+        if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] == NULL) {
+            $usersConn = $conn->query("SELECT * FROM users WHERE (Usual_Username = $rowLots["Usual_Username"])");
+
+            while ($rowUsers = $usersConn->fetch->assoc()) {
+                echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . ")</p>";
+            }
+        }
+        if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] != NULL) {
+            $usersConn = $conn->query("SELECT * FROM users WHERE (Usual_Username = $rowLots["Usual_Username"])");
+
+            while ($rowUsers = $usersConn->fetch->assoc()) {
+                echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . "), occupied by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . ")</p>";
+            }
+        }
+    }
+};
 /*
 0 - Occupied (Default)
 1 - Empty
