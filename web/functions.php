@@ -125,9 +125,8 @@ function account($name, $id, $car, $username, $password) {
 TODO:
 Add Ads?
 Accounts
-    - Username and password match table
-    - All must be filled in
     - Printout all spaces exchanged
+    - Password masking with the dot thingies
 Make image clickable to take to home
 
 git add .
