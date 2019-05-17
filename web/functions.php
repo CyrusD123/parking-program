@@ -124,19 +124,23 @@ function printout() {
     $lotsConn = $conn->query("SELECT * FROM lots");
 
     while ($rowLots = $lotsConn->fetch_assoc()) {
-        $name = $rowLots['Usual_Username'];
+        $nameOld = $rowLots['Usual_Username'];
+        $nameNew = $rowLots['New_Username'];
         if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] == NULL) {
-            $usersConn = $conn->query("SELECT name, id, car FROM users WHERE (username = '$name')");
+            $usersConn = $conn->query("SELECT name, id, car FROM users WHERE (username = '$nameOld')");
 
             while ($rowUsers = $usersConn->fetch_assoc()) {
                 echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . ")</p>";
             }
         }
         if ($rowLots["Usual_Username"] != NULL && $rowLots["New_Username"] != NULL) {
-            $usersConn = $conn->query("SELECT name, id, car FROM users WHERE (username = '$name')");
+            $usersConn = $conn->query("SELECT name, id, car FROM users WHERE (username = '$nameOld')");
+            $newUsersConn = $conn->query("SELECT name, id, car FROM users WHERE (username = '$nameNew')");
 
             while ($rowUsers = $usersConn->fetch_assoc()) {
-                echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . "), occupied by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . ")</p>";
+                while ($rowNewUsers = $newUsersConn->fetch_assoc()) {
+                    echo "<p style = 'font-family:verdana;font-size:11pt'> Space " . $rowLots['Space'] . " - Freed up by " . $rowUsers["name"] . "(ID: " . $rowUsers["id"] . ", Car: " . $rowUsers["car"] . "), occupied by " . $rowNewUsers["name"] . "(ID: " . $rowNewUsers["id"] . ", Car: " . $rowNewUsers["car"] . ")</p>";
+                }
             }
         }
     }
@@ -149,6 +153,7 @@ TODO:
 Add Ads?
 Accounts
     - Printout all spaces exchanged
+    - Only leave and occupy once
     - Password masking with the dot thingies
 Make image clickable to take to home
 
