@@ -44,15 +44,28 @@ function leave($space_num, $username, $password) {
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
     while($row = $result->fetch_assoc()) {
-        if ($row["Space"] == $space_num && $row["Status"] == 0) {
+        if ($row["Space"] == $space_num && $row["Status"] == 0 && $row["New_Username"] == NULL) {
             $existCount++;
         }
     }
-    if ($existCount == 1) {
-        $conn_leave = $conn->query("UPDATE lots SET Status = 1 WHERE (Space = $space_num) and (Status = 0)");
-    }
-    else {
+    if ($existCount == 0) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+
+    $userResult = $conn->query("SELECT * FROM users");
+    $existTwo = 0;
+    while($row = $userResult->fetch_assoc()) {
+        if ($row["username"] == $username && $row["password"] == $password) {
+            $existTwo++;
+        }
+    }
+    if ($existTwo == 0) {
+        echo "<script type='text/javascript'> alert('Error! Invalid Username or Password'); </script>";
+    }
+
+    if ($existCount == 1 && $existTwo == 1) {
+        $conn_leave = $conn->query("UPDATE lots SET Status = 1 WHERE (Space = $space_num) and (Status = 0)");
+        $conn_leave2 = $conn->query("UPDATE lots SET Usual_Username = '$username' WHERE (Space = $space_num)");
     }
 };
 
@@ -61,15 +74,28 @@ function occupy($space_num, $username, $password) {
     $result = $conn->query("SELECT * FROM lots");
     $existCount = 0;
     while($row = $result->fetch_assoc()) {
-        if ($row["Space"] == $space_num && $row["Status"] == 1) {
+        if ($row["Space"] == $space_num && $row["Status"] == 1 && $row["New_Username"] == NULL) {
             $existCount++;
         }
     }
-    if ($existCount == 1) {
-        $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
-    }
-    else {
+    if ($existCount == 0) {
         echo "<script type='text/javascript'> alert('Error! Invalid Space Number'); </script>";
+    }
+
+    $userResult = $conn->query("SELECT * FROM users");
+    $existTwo = 0;
+    while($row = $userResult->fetch_assoc()) {
+        if ($row["username"] == $username && $row["password"] == $password) {
+            $existTwo++;
+        }
+    }
+    if ($existTwo == 0) {
+        echo "<script type='text/javascript'> alert('Error! Invalid Username or Password'); </script>";
+    }
+
+    if ($existCount == 1 && $existTwo == 1) {
+        $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
+        $conn_leave2 = $conn->query("UPDATE lots SET New_Username = '$username' WHERE (Space = $space_num)");
     }
 };
 
