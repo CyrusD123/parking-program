@@ -106,7 +106,7 @@ function occupy($space_num, $username, $password) {
         echo "<script type='text/javascript'> alert('Error! Invalid Username or Password'); </script>";
     }
 
-    if ($existCount == 1 && $existTwo == 1 && $doneCount = 0;) {
+    if ($existCount == 1 && $existTwo == 1 && $doneCount = 0) {
         $conn_leave = $conn->query("UPDATE lots SET Status = 0 WHERE (Space = $space_num) and (Status = 1)");
         $conn_leave2 = $conn->query("UPDATE lots SET New_Username = '$username' WHERE (Space = $space_num)");
     }
