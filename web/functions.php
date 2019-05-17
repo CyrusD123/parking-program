@@ -136,17 +136,18 @@ function account($name, $id, $car, $username, $password) {
 function printout() {
     global $conn;
     $lotsConn = $conn->query("SELECT * FROM lots");
-/*
+    $lotsConn2 = $conn->query("SELECT * FROM lots");
+
     $emptyInt = 0;
-    while ($rowEmpty = $lotsConn->fetch_assoc()) {
+    while ($rowEmpty = $lotsConn2->fetch_assoc()) {
         if ($rowEmpty["Usual_Username"] == NULL) {
             $emptyInt++;
         }
     }
-    if ($emptyInt == $lotsConn->num_rows) {
+    if ($emptyInt == $lotsConn2->num_rows) {
         echo "<p style = 'font-family:verdana;font-size:14pt'> No parking spaces have been changed. </p>";
     }
-*/
+
     while ($rowLots = $lotsConn->fetch_assoc()) {
         $nameOld = $rowLots["Usual_Username"];
         $nameNew = $rowLots["New_Username"];
