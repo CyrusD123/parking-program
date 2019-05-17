@@ -28,14 +28,12 @@
         background: #5CBFFF;
         border-color: #5CBFFF;
     }
-    input[type=password] {
-        -webkit-appearance: none;
-        border-radius: 6px;
+    input[type=text] {
         padding: 12px 20px;
-        color: white;
-        font: 14px verdana;
-        background: #5CBFFF;
-        border-color: #5CBFFF;
+        box-sizing: border-box;
+        border-radius: 6px;
+        border-color: black;
+    }
     }
 </style>
 <body style="background-color:#444444">
