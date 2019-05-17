@@ -165,7 +165,6 @@ function printout() {
 
 TODO:
 Add Ads?
-Make image clickable to take to home
 
 git add .
 git commit -m "comment"

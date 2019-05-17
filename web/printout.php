@@ -36,7 +36,9 @@
     }
 </style>
 <body style="background-color:#444444">
-    <img src="logo.png" alt="Not-a-Bot" class="center">
+    <a href="index.php">
+        <img src="logo.png" alt="Not-a-Bot" class="center">
+    </a>
 
     <?php printout(); ?>
 

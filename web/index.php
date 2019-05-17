@@ -36,7 +36,9 @@
     }
 </style>
 <body style="background-color:#444444">
-    <img src="logo.png" alt="Not-a-Bot" class="center">
+    <a href="index.php">
+        <img src="logo.png" alt="Not-a-Bot" class="center">
+    </a>
     <?php echo "<p style = 'font-family:verdana;font-size:16pt'> $initial </p>"; ?>
     
     <form action="account.php" style="position:absolute;top:10;right:10;">
