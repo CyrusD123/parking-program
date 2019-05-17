@@ -37,7 +37,7 @@
         <input type="submit" value="Create an Account" style="float: right;" />
     </form>
 
-    <form action="printout.php" style="position:absolute;top:50;right:10;">
+    <form action="printout.php" style="position:absolute;top:65;right:10;">
         <input type="submit" value="Get a Printout" style="float: right;" />
     </form>
 
