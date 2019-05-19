@@ -183,6 +183,19 @@ function printout() {
         }
     }
 };
+
+function adminCheck($username, $password) {
+    global $conn;
+    $adminName = $conn->query("SELECT username FROM users WHERE (id = '000000')";
+    $adminPass = $conn->query("SELECT password FROM users WHERE (id = '000000')";
+
+    if ($adminName == $username && $adminPass == $password) {
+        header("Location:printout.php");
+    }
+    else {
+        echo "<p style = 'font-family:verdana;font-size:14pt'> Username or Password is incorrect. Please try again. </p>";
+    }
+};
 /*
 0 - Occupied (Default)
 1 - Empty
