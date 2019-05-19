@@ -117,6 +117,8 @@ function account($name, $id, $car, $username, $password) {
     global $conn;
     $validConn = $conn->query("SELECT * FROM users");
     $validInt = 0;
+    $singleQuote = "\'";
+    $doubleQuote = "\"";
     while($row = $validConn->fetch_assoc()) {
         if ($row["id"] == $id) {
             echo "<script type='text/javascript'> alert('ID number has already been used. Please try again.'); </script>";
@@ -126,8 +128,15 @@ function account($name, $id, $car, $username, $password) {
             echo "<script type='text/javascript'> alert('Username has already been used. Please try again'); </script>";
             $validInt++;
         }
+        if (strpos($name, $singleQuote) === false && strpos($name, $doubleQuote) === false && 
+            strpos($id, $singleQuote) === false && strpos($id, $doubleQuote) === false && 
+            strpos($car, $singleQuote) === false && strpos($car, $doubleQuote) === false && 
+            strpos($username, $singleQuote) === false && strpos($username, $doubleQuote) === false && 
+            strpos($password, $singleQuote) === false && strpos($password, $doubleQuote) === false) {
+            $validInt--;
+        }
     }
-    if ($validInt == 0) {
+    if ($validInt == -1) {
         $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ('$name', '$id', '$car', '$username', '$password')");
         header("Location:index.php");
     }
