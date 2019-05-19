@@ -129,6 +129,7 @@ function account($name, $id, $car, $username, $password) {
             echo "<script type='text/javascript'> alert('Username has already been used. Please try again'); </script>";
             $validInt++;
         }
+        /*
         if (strpos($name, $singleQuote) === false && strpos($name, $doubleQuote) === false && 
             strpos($id, $singleQuote) === false && strpos($id, $doubleQuote) === false && 
             strpos($car, $singleQuote) === false && strpos($car, $doubleQuote) === false && 
@@ -139,8 +140,9 @@ function account($name, $id, $car, $username, $password) {
         else {
             echo "<script type='text/javascript'> alert('Single quotes or double quotes are not allowed in your account information. Please omit them to continue.'); </script>";
         }
+        */
     }
-    if ($validInt == 0 & $quoteInt == 1) {
+    if ($validInt == 0) {
         $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ('$name', '$id', '$car', '$username', '$password')");
         header("Location:index.php");
     }
