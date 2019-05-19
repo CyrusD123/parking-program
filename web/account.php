@@ -44,7 +44,7 @@
         <p style = 'font-family:verdana;font-size:16pt'>
         Create an Account </p>
         <input type="text" name="account_name" placeholder="Your Name" required> <br>
-        <input type="number" name="account_id" min="1" placeholder="Your School ID" required> <br>
+        <input type="number" name="account_id" min="0" placeholder="Your School ID" required> <br>
         <input type="text" name="account_car" placeholder="Make and Model of Car" required> <br>
         <input type="text" name="account_username" placeholder="Username" required> <br>
         <input type="password" name="account_password" placeholder="Password" required> <br>
