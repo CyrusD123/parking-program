@@ -135,6 +135,9 @@ function account($name, $id, $car, $username, $password) {
             strpos($password, $singleQuote) === false && strpos($password, $doubleQuote) === false) {
             $validInt--;
         }
+        else {
+            echo "<script type='text/javascript'> alert('Single quotes or double quotes are not allowed in your account information. Please omit them to continue.'); </script>";
+        }
     }
     if ($validInt == -1) {
         $accountConn = $conn->query("INSERT INTO users (name, id, car, username, password) VALUES ('$name', '$id', '$car', '$username', '$password')");
