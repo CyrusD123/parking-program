@@ -186,14 +186,15 @@ function printout() {
 
 function adminCheck($username, $password) {
     global $conn;
-    $adminName = $conn->query("SELECT username FROM users WHERE (id = '000000')");
-    $adminPass = $conn->query("SELECT password FROM users WHERE (id = '000000')");
+    $adminCred = $conn->query("SELECT username, password FROM users WHERE (id = '000000')");
 
-    if ($adminName == $username && $adminPass == $password) {
-        header("Location:printout.php");
-    }
-    else {
-        echo "<p style = 'font-family:verdana;font-size:14pt'> Username or Password is incorrect. Please try again. </p>";
+    while ($row = $adminCred->fetch_assoc()){
+        if ($row["username"] == $username && $row["password"] == $password) {
+            header("Location:printout.php");
+        }
+        else {
+            echo "<script type='text/javascript'> alert('Username or Password is incorrect. Please try again.'); </script>";
+        }
     }
 };
 /*
